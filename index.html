@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Chessboard</title>
+  <style>
+  .chessboard {
+  border: 2px solid black;
+  width:400px;
+}
+
+.row {
+  direction: flex;
+  flex-wrap:wrap;
+}
+
+.black {
+  background:black;
+  height:50px;
+  width:50px;
+}
+.white {
+  height:50px;
+  width:50px;
+}
+  </style>
+</head>
+<body>
+  <div class="chessboard">
+    
+  </div>
+
+</body>
+<script>
+const rows =8;
+const columns =8;
+
+const chess = document.getElementsByClassName("chessboard");
+
+for(let i=0;i<=rows;i++){
+  const row = document.createElement("div");
+  row.setAttribute("class","row");
+ for(let j=0;j<=columns;j++){
+   const col = document.createElement("div");
+   if((i+j)%2 ===0){
+     col.setAttribute("class","col black");
+   }else{
+     col.setAttribute("class","col white");
+   }
+   row.append(col);
+ }
+  chess.append(row);
+}
+  </script>
+</html>
